@@ -15,6 +15,10 @@ const io = new SocketIO(server, {
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.json({ message: 'backend simplechatapp' });
+});
+
 io.on('connection', (socket) => {
   console.log('A user connected');
 
